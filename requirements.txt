@@ -1,0 +1,47 @@
+# 基础环境 - LangChain/LlamaIndex
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-openai>=0.0.5
+llama-index>=0.10.0
+
+# 数据加载和预处理 - pandas, PyPDF2
+pandas>=2.0.0
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+
+# 文档分块策略 - LangChain Splitters
+# (已包含在 langchain 中)
+
+# 文本向量化 - HuggingFace, BGE
+sentence-transformers>=2.2.0
+transformers>=4.30.0
+torch>=2.0.0
+
+# 向量数据库操作 - Chroma
+chromadb>=0.4.0
+
+# 检索优化 - Query Expansion
+nltk>=3.8.0
+spacy>=3.5.0
+
+# 索引优化 - 搜索引擎
+whoosh>=2.7.4
+
+# 检索后处理 - 重排序, 过滤
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# 答案生成 - LLM 集成
+openai>=1.0.0
+
+# 系统性能评估 - RAGAS, TruLens
+ragas>=0.1.0
+trulens-eval>=0.20.0
+
+# Streamlit 展示层
+streamlit>=1.30.0
+
+# 其他工具
+python-dotenv>=1.0.0
+tiktoken>=0.5.0
+tqdm>=4.65.0

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "question": "查询所有用户的信息",
+        "sql": "SELECT * FROM users;",
+        "context": "用户表 users 包含 id, name, email, created_at 字段",
+        "difficulty": "easy"
+    },
+    {
+        "id": 2,
+        "question": "查询订单金额大于1000的订单",
+        "sql": "SELECT * FROM orders WHERE amount > 1000;",
+        "context": "订单表 orders 包含 id, user_id, amount, status, created_at 字段",
+        "difficulty": "easy"
+    },
+    {
+        "id": 3,
+        "question": "统计每个用户的订单总数",
+        "sql": "SELECT user_id, COUNT(*) as order_count FROM orders GROUP BY user_id;",
+        "context": "订单表 orders 包含 id, user_id, amount, status 字段",
+        "difficulty": "medium"
+    },
+    {
+        "id": 4,
+        "question": "查询最近7天注册的用户",
+        "sql": "SELECT * FROM users WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 7 DAY);",
+        "context": "用户表 users 包含 id, name, email, created_at 字段",
+        "difficulty": "medium"
+    },
+    {
+        "id": 5,
+        "question": "查询每个部门的平均工资",
+        "sql": "SELECT department_id, AVG(salary) as avg_salary FROM employees GROUP BY department_id;",
+        "context": "员工表 employees 包含 id, name, department_id, salary 字段",
+        "difficulty": "medium"
+    },
+    {
+        "id": 6,
+        "question": "查询销售额前10的产品",
+        "sql": "SELECT product_id, SUM(quantity * price) as total_sales FROM order_items GROUP BY product_id ORDER BY total_sales DESC LIMIT 10;",
+        "context": "订单明细表 order_items 包含 id, order_id, product_id, quantity, price 字段",
+        "difficulty": "hard"
+    },
+    {
+        "id": 7,
+        "question": "查询没有下过订单的用户",
+        "sql": "SELECT u.* FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE o.id IS NULL;",
+        "context": "用户表 users 和订单表 orders，通过 user_id 关联",
+        "difficulty": "hard"
+    },
+    {
+        "id": 8,
+        "question": "查询每月的销售趋势",
+        "sql": "SELECT DATE_FORMAT(created_at, '%Y-%m') as month, SUM(amount) as total_amount FROM orders GROUP BY month ORDER BY month;",
+        "context": "订单表 orders 包含 id, amount, created_at 字段",
+        "difficulty": "hard"
+    },
+    {
+        "id": 9,
+        "question": "查询重复的邮箱地址",
+        "sql": "SELECT email, COUNT(*) as count FROM users GROUP BY email HAVING count > 1;",
+        "context": "用户表 users 包含 id, name, email 字段",
+        "difficulty": "medium"
+    },
+    {
+        "id": 10,
+        "question": "查询订单状态为待支付且超过24小时未处理的订单",
+        "sql": "SELECT * FROM orders WHERE status = 'pending' AND created_at < DATE_SUB(NOW(), INTERVAL 24 HOUR);",
+        "context": "订单表 orders 包含 id, user_id, amount, status, created_at 字段",
+        "difficulty": "hard"
+    }
+]
