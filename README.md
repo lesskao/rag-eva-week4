@@ -7,7 +7,7 @@
 ## 📁 项目结构
 
 ```
-rag-eva-week4/
+rag-eva-week5/
 ├── app.py              # 【展示层】Streamlit 主程序，负责成果展示与交互
 ├── rag_engine.py       # 【逻辑层】封装 Module 01-08，核心 RAG 流水线实现
 ├── evaluator.py        # 【评估层】封装 Module 09，基于 JSON 的自动评分逻辑
